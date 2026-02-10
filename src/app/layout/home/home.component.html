@@ -1,0 +1,147 @@
+<!-- Hero banner -->
+<section id="inicio" class="hero text-white d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1 class="display-4 fw-bold">Estudio Jurídico con experiencia</h1>
+        <p class="lead mt-3">
+          Más de 20 años brindando soluciones legales eficientes.
+        </p>
+        <a href="#contacto" class="btn btn-primary btn-lg mt-3">
+          Contáctanos
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Nosotros -->
+<section id="nosotros" class="py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center">Quiénes Somos</h2>
+    <p class="text-center text-muted mb-4">
+      Somos un equipo de abogados especialistas, con más de 20 años de experiencia.
+    </p>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p>
+          Asesoría legal integral y consultoría para personas y empresas en diversas áreas del derecho.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="Images/estudios-juridicos.jpg"  class="img-fluid rounded shadow"
+/>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section id="servicios" class="bg-light py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center">Nuestros Servicios</h2>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">Derecho Civil</h5>
+            <p class="card-text">Asesoría y defensa en procesos civiles.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">Derecho Laboral</h5>
+            <p class="card-text">Gestión y defensa de relaciones laborales.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">Derecho Tributario</h5>
+            <p class="card-text">Planeamiento y defensa fiscal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipo -->
+<div class="container my-5">
+
+  <h2 class="text-center mb-4">Nuestro Equipo Legal</h2>
+
+  <!-- LOADING -->
+  <div *ngIf="cargando" class="text-center">
+    <div class="spinner-border text-dark"></div>
+  </div>
+
+  <!-- ERROR -->
+  <div *ngIf="error" class="alert alert-danger text-center">
+    {{ error }}
+  </div>
+
+  <!-- LISTA DE ABOGADOS -->
+  <div class="row" *ngIf="!cargando && !error">
+
+    <div class="col-md-4 mb-4" *ngFor="let abogado of abogados">
+
+      <div class="card h-100 shadow-sm">
+
+        <!-- <img
+          *ngIf="abogado.fotoUrl"
+          [src]="abogado.fotoUrl"
+          class="card-img-top"
+          alt="Foto abogado"> -->
+
+        <div class="card-body text-center">
+
+          <h5 class="card-title">
+            {{ abogado.nombres }}
+          </h5>
+
+          <p class="card-text text-muted">
+            {{ abogado.especialidad }}
+          </p>
+
+          <p class="small">
+            {{ abogado.email }}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Contacto -->
+<section id="contacto" class="bg-light py-5">
+  <div class="container">
+    <h2 class="fw-bold text-center">Contáctanos</h2>
+    <form class="row g-3 mt-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Nombre">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Correo">
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" rows="4" placeholder="Mensaje"></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button class="btn btn-primary px-5">Enviar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
